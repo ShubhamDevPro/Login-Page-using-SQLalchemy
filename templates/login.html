@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Login or Signup</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Login or Signup</h1>
+        <form method="POST" action="/login" class="form">
+            <input type="text" name="username" placeholder="Username" required class="input">
+            <input type="password" name="password" placeholder="Password" required class="input">
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <hr>
+        <form method="POST" action="/signup" class="form">
+            <input type="text" name="name" placeholder="Full Name" required class="input">
+            <input type="text" name="dob" placeholder="Date of Birth (YYYY-MM-DD)" required class="input">
+            <input type="text" name="address" placeholder="Address" required class="input">
+            <input type="text" name="mobile_number" placeholder="Mobile Number" required class="input">
+            <input type="text" name="username" placeholder="Username" required class="input">
+            <input type="password" name="password" placeholder="Password" required class="input">
+            <button type="submit" class="btn">Signup</button>
+        </form>
+        <div>{{ get_flashed_messages() }}</div>
+    </div>
+</body>
+</html>
